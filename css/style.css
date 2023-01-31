@@ -1,0 +1,33 @@
+.calculator{
+    background-color: #ece9e9;
+}
+
+.key-operation{
+    background-color: #f4f4f5;
+}
+
+.key-num{
+    background-color: white;
+}
+
+.key-equal{
+    background-color: lightskyblue;
+}
+
+.key-num:hover{
+    background-color: #f4f4f5;
+}
+
+.key-operation:hover{
+    background-color: white;
+}
+
+#number_display{
+    line-height: 5;
+    font-size: medium;
+}
+
+#operation_display{
+    line-height: 5;
+    font-size: larger;
+}
