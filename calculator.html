@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 
 <head>
     <meta charset="UTF-8">
@@ -14,84 +14,91 @@
 </head>
 
 <body>
+    
     <div class="container">
         <div class="container-heading">
             <h1>CALCULATOR</h1>
         </div>
-        <div class="col-6 calculator p-3">
-            <div class="row display d-flex">
-                <input type="text" class="border-0 col-10" name="number_display" id="number_display"
+        <div class="col-4 calculator p-3">
+            <div class=" display">
+                <input type="text" class="border-0 col me-1" placeholder="0" name="number_display" id="number_display"
                     oninput="getinput()">
-                <input type="text" class="border-0 col-2" name="operation_display" id="operation_display">
+                <input type="text" class="border-0 col me-1" placeholder="0" name="operation_display" id="operation_display">
             </div>
-            <div class="row keys-div">
-                <div class="row d-flex mb-1 justify-content-right">
+            <div class="keys-div">
+                <div class="row d-flex mb-1">
                     <div class="col-2 p-2 text-center btn key me-1">DEG</div>
                     <div class="col-2 p-2 text-center btn key me-1">F-E</div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key me-1 text-muted">MC</div>
-                    <div class="col-2 p-2 text-center btn key me-1 text-muted">MR</div>
-                    <div class="col-2 p-2 text-center btn key me-1">M+</div>
-                    <div class="col-2 p-2 text-center btn key me-1">M-</div>
-                    <div class="col-2 p-2 text-center btn key me-1">MS</div>
+                    <div class="col p-2 text-center btn key me-1 text-muted">MC</div>
+                    <div class="col p-2 text-center btn key me-1 text-muted">MR</div>
+                    <div class="col p-2 text-center btn key me-1">M+</div>
+                    <div class="col p-2 text-center btn key me-1">M-</div>
+                    <div class="col p-2 text-center btn key me-1">MS</div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-3 p-2 text-center btn key me-1">Trignometry<i
-                            class="fa-solid fa-angle-down ms-1"></i></div>
+                    <div class="col-3 p-2 text-center btn key me-1 " id="trignometry_function_button" onclick="trignometry()">Trignometry</div>
+                    <div class="col-3 p-2 text-center btn key me-1 " id="normal_function_button" onclick="normal()">Normal</div>
                     <div class="col-3 p-2 text-center btn key me-1">Function<i class="fa-solid fa-angle-down ms-1"></i>
                     </div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key key-operation me-1">2<sup>nd</sup></div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayNum(3.14)">&pi;</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1">e</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="clearAll()">C</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="backspace()"><i
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function">2<sup>nd</sup></div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function" onclick="displayNum(3.14)">&pi;</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function" onclick="displayNum(2.7182)">e</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="sin()">Sin</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="cos()">Cos</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="tan()">Tan</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="clearAll()">C</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="backspace()"><i
                             class="fas fa-backspace"></i></div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="square()">x<sup>2</sup></div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="inverse()">1/x</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="absolute()">|x|</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="exponential()">exp</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="modulus()">mod</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function" onclick="square()">x<sup>2</sup></div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function" onclick="inverse()">1/x</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function" onclick="absolute()">|x|</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="cosec()">Cosec</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="sec()">Sec</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="cot()">Cot</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="exponential()">exp</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayOpt('%')">mod</div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayNum(9)"><sup>2</sup>√x
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="squareroot()"><sup>2</sup>√x
                     </div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayNum(40)">(</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayNum(41)">)</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1">n!</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayOpt('/')">÷</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayNum(40)">(</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayNum(41)">)</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="factorial()">n!</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayOpt('/')">÷</div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key key-operation me-1">x<sup>y</sup></div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(7)">7</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(8)">8</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(9)">9</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayOpt('*')">X</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayOpt(' ** ')">x<sup>y</sup></div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(7)">7</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(8)">8</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(9)">9</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayOpt('*')">X</div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key key-operation me-1">10<sup>x</sup></div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(4)">4</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(5)">5</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(6)">6</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayOpt('-')">-</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="tenpow()">10<sup>x</sup></div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(4)">4</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(5)">5</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(6)">6</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayOpt('-')">-</div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key key-operation me-1">log</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(1)">1</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(2)">2</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(3)">3</div>
-                    <div class="col-2 p-2 text-center btn key key-operation me-1" onclick="displayOpt('+')">+</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="log()">log</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(1)">1</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(2)">2</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(3)">3</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="displayOpt('+')">+</div>
                 </div>
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key key-operation me-1">ln</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1"><sup>+</sup>/<sub>-</sub></div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum(0)">0</div>
-                    <div class="col-2 p-2 text-center btn key key-num me-1" onclick="displayNum('.')">.</div>
-                    <div class="col-2 p-2 text-center btn key-equal me-1" onclick="evaluateString()">=</div>
+                    <div class="col p-2 text-center btn key key-operation me-1" onclick="ln()">ln</div>
+                    <div class="col p-2 text-center btn key key-num me-1"><sup>+</sup>/<sub>-</sub></div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum(0)">0</div>
+                    <div class="col p-2 text-center btn key key-num me-1" onclick="displayNum('.')">.</div>
+                    <div class="col p-2 text-center btn key-equal me-1" onclick="evaluateString()">=</div>
                 </div>
             </div>
         </div>

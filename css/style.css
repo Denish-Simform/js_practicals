@@ -2,6 +2,7 @@
     background-color: #ece9e9;
 }
 
+
 .key-operation{
     background-color: #f4f4f5;
 }
@@ -23,11 +24,33 @@
 }
 
 #number_display{
-    line-height: 5;
-    font-size: medium;
+    background-color: #ece9e9;
+    line-height: 3;
+    font-size: large;
+    width: 100%;
+    direction: rtl;
 }
 
 #operation_display{
-    line-height: 5;
-    font-size: larger;
+    background-color: #ece9e9;
+    line-height: 1;
+    font-size: medium;
+    width: 100%;
+    padding-top: 5px;
+}
+
+#normal_function_button{
+    display: none;
+}
+
+#normal_trignometry_button{
+    display: block;
+}
+
+.replace_normal_function{
+    display: block;
+}
+
+.replace_trignometric_function{
+    display: none;
 }
