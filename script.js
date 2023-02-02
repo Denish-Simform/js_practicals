@@ -1,13 +1,15 @@
 
-// function getinput() {
-//     let input = document.getElementById("number_display").value;
-
-// }
-
 function evaluateString() {
-
-    // document.getElementById("operation_display").value = output;
-    document.getElementById("number_display").value = document.getElementById("operation_display").value;
+    let operation_display = document.getElementById("operation_display").value;
+    let number_display = document.getElementById("number_display").value;
+    operation_display = Number(operation_display);
+    if(Number.isInteger(operation_display)){
+        document.getElementById("number_display").value = operation_display;
+    }
+    else{
+        document.getElementById("number_display").value = "Error";
+        document.getElementById("operation_display").value = "Error";
+    }
 
 }
 function calc() {
@@ -156,7 +158,7 @@ function sin() {
     let current = document.getElementById("number_display").value;
     let degrees = current;
     let radians = degrees * Math.PI/180
-    document.getElementById("operation_display").value = Math.sin(eval(radians));
+    document.getElementById("operation_display").value = Math.round(Math.sin(eval(radians)));
     document.getElementById("number_display").value = "sin(" + current + "*)";
 }
 
@@ -164,7 +166,7 @@ function cos() {
     let current = document.getElementById("number_display").value;
     let degrees = current;
     let radians = degrees * Math.PI/180
-    document.getElementById("operation_display").value = Math.cos(eval(radians));
+    document.getElementById("operation_display").value = Math.round(Math.cos(eval(radians)));
     document.getElementById("number_display").value = "cos(" + current + "*)";
 }
 
@@ -172,7 +174,7 @@ function tan() {
     let current = document.getElementById("number_display").value;
     let degrees = current;
     let radians = degrees * Math.PI/180
-    document.getElementById("operation_display").value = Math.tan(eval(radians));
+    document.getElementById("operation_display").value = Math.round(Math.tan(eval(radians)));
     document.getElementById("number_display").value = "tan(" + current + "*)";
 }
 
@@ -180,7 +182,7 @@ function cosec() {
     let current = document.getElementById("number_display").value;
     let degrees = current;
     let radians = degrees * Math.PI/180
-    document.getElementById("operation_display").value = eval(1 / Math.sin(eval(radians)));
+    document.getElementById("operation_display").value = Math.round(eval(1 / Math.sin(eval(radians))));
     document.getElementById("number_display").value = "cosec(" + current + "*)";
 }
 
@@ -188,7 +190,7 @@ function sec() {
     let current = document.getElementById("number_display").value;
     let degrees = current;
     let radians = degrees * Math.PI/180
-    document.getElementById("operation_display").value = eval(1 / Math.cos(eval(radians)));
+    document.getElementById("operation_display").value = Math.round(eval(1 / Math.cos(eval(radians))));
     document.getElementById("number_display").value = "sec(" + current + "*)";
 }
 
@@ -196,7 +198,36 @@ function cot() {
     let current = document.getElementById("number_display").value;
     let degrees = current;
     let radians = degrees * Math.PI/180
-    document.getElementById("operation_display").value = eval(1 / Math.tan(eval(radians)));
+    document.getElementById("operation_display").value =Math.round(eval(1 / Math.tan(eval(radians)))) ;
     document.getElementById("number_display").value = "cot(" + current + "*)";
 }
 
+function memorySave(){
+    let current = document.getElementById("number_display").value;
+    localStorage.setItem("1",current);
+    console.log(localStorage.getItem(1));
+}
+
+function memoryRead(){
+    document.getElementById("number_display").value = localStorage.getItem(1);
+    document.getElementById("operation_display").value = localStorage.getItem(1);
+}
+
+function memoryAdd(){
+    let current = document.getElementById("number_display").value;
+    let added = Number(localStorage.getItem(1)) + Number(current);
+    localStorage.setItem("1",added);
+    console.log(localStorage.getItem(1));
+}
+
+function memorySub(){
+    let current = document.getElementById("number_display").value;
+    let added = Number(localStorage.getItem(1)) - Number(current);
+    localStorage.setItem("1",added);
+}
+
+function memoryClear(){
+    localStorage.clear();
+    document.getElementById("number_display").value = 0;
+    document.getElementById("operation_display").value = 0;
+}

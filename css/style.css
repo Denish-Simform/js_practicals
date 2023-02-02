@@ -28,7 +28,7 @@
     line-height: 3;
     font-size: large;
     width: 100%;
-    direction: rtl;
+    text-align: right;
 }
 
 #operation_display{
