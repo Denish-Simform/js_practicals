@@ -9,7 +9,6 @@ function scrollFunction() {
 }
 
 function topFunction() {
-    document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
 
@@ -40,5 +39,18 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
+}
+
+function batches() {
+    document.getElementById("carousel").style.display = "none !important";
+    document.getElementById("event").style.display = "none !important";
+    document.getElementById("about_us").style.display = "none !important";
+    document.getElementById("testimonials").style.display = "none !important";
+}
+
+function events() {
+    let frame = document.getElementById("iframe");
+    frame.style.display = 'block !important';
+    frame.src = 'events.html';
 }
 

@@ -9,51 +9,37 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/jquery-3.2.1.slim.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light p-3">
-        <div class="container-fluid p-1 d-flex justify-content-start">
-            <div class="col-4">
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo-small.png" alt="logo-small">
-                    JNV Jamnagar Allumni Association
-                </a>
+<body class="bg-dark" data-spy="scroll" data-target="#navbar" data-offset-top="200">
+    <nav class="navbar sticky-top navbar-expand-lg bg-dark" id="navbar">
+        <div class="container">
+            <img src="images/logo-small.png" class="me-3" alt="">
+            <a class="navbar-brand text-light" href="#">JNV Jamnagar Alumni Association</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                    <li class="nav-item active">
+                        <a class="nav-link active text-light" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="batches.html">Batches</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="events.html">Events</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="testimonials.html" >Testimonials</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="photos.html" >Photo Gallery</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-6">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="" id="">
-                    <ul class="d-flex unlist">
-                        <li class="item col-2">
-                            <a class="link " aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="item col-2">
-                            <a class="link" href="#members">Members</a>
-                        </li>
-                        <li class="item col-2">
-                            <a class="link " href="#Testimonials" id="" role="">Testimonials</a>
-                        </li>
-                        <li class="item col-2">
-                            <a class="link" href="#about_us">About Us</a>
-                        </li>
-                    </ul>
-                    <!-- <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form> -->
-                </div>
-            </div>
-
         </div>
     </nav>
 
-    <section class="d-flex justify-content-center">
+    <section class="d-flex justify-content-center" id="carousel">
         <div id="carouselExampleIndicators" class="carousel slide w-75 h-50" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -62,19 +48,19 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100 h-50" src="images/slider-1.jpg" alt="First slide">
+                    <img class="d-block w-100 h-50" src="images/slider-1.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/slider-2.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="images/slider-2.png" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/slider-3.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="images/slider-3.png" alt="Third slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/slider-4.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="images/slider-4.png" alt="Third slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="images/slider-5.jpg" alt="Third slide">
+                    <img class="d-block w-100" src="images/slider-5.png" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,205 +74,318 @@
         </div>
     </section>
 
-    <button id="back-to-top-btn" class="btn btn-primary btn-lg back-to-top"
-        style="display: block;position: fixed; margin-bottom: 0px; margin-left: 0px;">
+    <button id="back-to-top-btn" class="btn btn-primary btn-lg back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <section class="wrapper" id="members">
-        <div class="container-fostrap">
-            <div>
-                <img src="images/logo-small.png" class="fostrap-logo" />
-                <h1 class="heading">
-                    Alumni Members
+    <section class="mt-5" id="batches">
+        <div class="container p-5">
+            <div class="row text-center text-light">
+                <h1>COME IN TO LEARN, GO OUT TO SERVE</h1>
+                <div class="col-sm-2 mt-5">
+                    <img src="images/jnv_logo.jpg" class="img-fluid rounded" alt="jnv_logo">
+                </div>
+                <div class="col-sm-3 mt-5"></div>
+                <div class="col-sm-7 text-light mt-5 text-start">
+                    Jawahar Navodaya Vidyalaya (JNV) Jamnagar is a co-educational, residential school located in the
+                    city of
+                    Jamnagar, Gujarat, India. It is part of the Navodaya Vidyalaya Samiti, a government-run organization
+                    that operates a chain of schools across India. The aim of JNV Jamnagar, as well as other JNVs, is to
+                    provide quality education to talented children from rural areas of India.
+
+                    JNV Jamnagar follows the CBSE (Central Board of Secondary Education) curriculum and offers classes
+                    from
+                    VI to XII. The medium of instruction is primarily Hindi and English. Admissions to JNV Jamnagar are
+                    based on a nationwide entrance exam, known as the Jawahar Navodaya Vidyalaya Selection Test (JNVST),
+                    which is held annually for students in Class V.
+
+                    JNV Jamnagar provides a well-rounded education that emphasizes academics, sports, and co-curricular
+                    activities. The school has a dedicated team of experienced teachers and state-of-the-art facilities
+                    to
+                    support student learning and development. The school also provides free boarding and lodging to all
+                    students.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="container bg-dark p-5">
+            <div class="row text-center">
+                <h1 class="text-light">Our Batches</h1>
+                <div class="mt-5 row">
+                    <div class="col-2 d-flex my-auto">
+                        <select class="form-select h-25" aria-label="default select example">
+                            <option selected>2000-2005</option>
+                            <option value="1">2006-2010</option>
+                            <option value="2">2011-2015</option>
+                            <option value="3">2016-2020</option>
+                        </select>
+
+                        <!-- <div class="btn-group">
+                            <button type="button" class="btn btn-primary text-dark">Batches</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split text-dark"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">2006-2010</a>
+                                <a class="dropdown-item" href="#">2011-2015</a>
+                                <a class="dropdown-item" href="#">2016-2020</a>
+                                <a class="dropdown-item" href="#">2000-2005</a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <img src="images/person-1.png" class="card-img-top" alt="Card Image">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">2000-2006</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <img src="images/person-2.png" class="card-img-top" alt="Card Image">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">2001-2007</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <img src="images/person-3.png" class="card-img-top" alt="Card Image">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">2002-2008</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <img src="images/person-1.png" class="card-img-top" alt="Card Image">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">2003-2009</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <img src="images/person-2.png" class="card-img-top" alt="Card Image">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">2004-2010</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card">
+                                    <img src="images/person-1.png" class="card-img-top" alt="Card Image">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">2005-2011</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5" id="events">
+        <div class="container p-5">
+            <h1 class="text-center text-light">Upcoming Events : Stay Tuned</h1>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="event1.jpg" class="card-img-top" alt="Event 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Event 1</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+                                euismod odio, gravida pellentesque urna varius vitae.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="event2.jpg" class="card-img-top" alt="Event 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Event 2</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+                                euismod odio, gravida pellentesque urna varius vitae.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="event3.jpg" class="card-img-top" alt="Event 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Event 3</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra
+                                euismod odio, gravida pellentesque urna varius vitae.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container mt-5" id="testimonials">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="heading text-light">
+                    Testimonials
                 </h1>
             </div>
-            <div class="content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
-                                <a class="img-card"
-                                    href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                    <img
-                                        src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />
-                                </a>
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
-                                            Bootstrap 3 Carousel FadeIn Out Effect
-                                        </a>
-                                    </h4>
-                                    <p class="">
-                                        Tutorial to make a carousel bootstrap by adding more wonderful effect fadein ...
+            <div id="testimonial-carousel" class="carousel slide mt-5" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#testimonial-carousel" data-slide-to="1"></li>
+                    <li data-target="#testimonial-carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card testimonial-card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <p class="card-text">"I am proud to be a part of the JNV Jamnagar Alumni
+                                        Association.
+                                        The
+                                        community and network that this association provides is invaluable, and I have
+                                        made
+                                        lifelong friends through my involvement. The events and initiatives organized by
+                                        the
+                                        association keep us connected to our alma mater and allow us to give back to
+                                        current
+                                        students. I am grateful for the opportunities and memories that this association
+                                        has
+                                        provided me and I highly recommend it to all JNV Jamnagar alumni."
                                     </p>
+                                    <img src="images/person-1.png" alt="person-1" class="h-25 w-25">
                                 </div>
-                                <div class="card-read-more">
-                                    <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"
-                                        class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
-                                <a class="img-card"
-                                    href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                    <img
-                                        src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
-                                </a>
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a
-                                            href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">
-                                            Material Design Responsive Menu
-                                        </a>
-                                    </h4>
-                                    <p class="">
-                                        Material Design is a visual programming language made by Google. Language
-                                        programming...
-                                    </p>
-                                </div>
-                                <div class="card-read-more">
-                                    <a href="https://codepen.io/wisnust10/full/ZWERZK/" class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-4">
-                            <div class="card">
-                                <a class="img-card"
-                                    href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
-                                    <img
-                                        src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
-                                </a>
-                                <div class="card-content">
-                                    <h4 class="card-title">
-                                        <a
-                                            href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5
-                                            Button Hover Animation Effects
-                                        </a>
-                                    </h4>
-                                    <p class="">
-                                        tutorials button hover animation, although very much a hover button is very
-                                        beauti...
-                                    </p>
-                                </div>
-                                <div class="card-read-more">
-                                    <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html"
-                                        class="btn btn-link btn-block">
-                                        Read More
-                                    </a>
-                                </div>
+
+                                <h4 class="card-title">John Doe</h4>
                             </div>
                         </div>
                     </div>
+                    <div class="carousel-item">
+                        <div class="card testimonial-card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <p class="card-text">"Being a part of the JNV Jamnagar Alumni Association has been a
+                                        truly
+                                        enriching experience for me. The community of alumni is supportive and
+                                        welcoming,
+                                        and
+                                        the events and initiatives organized by the association have allowed me to stay
+                                        connected with my alma mater and give back to the school in meaningful ways. I
+                                        am
+                                        proud
+                                        to be a part of this vibrant and dynamic network and look forward to continuing
+                                        my
+                                        involvement in the future."
+                                    </p>
+                                    <img src="images/person-2.png" alt="" class="h-25 w-25">
+                                </div>
+
+                                <h4 class="card-title">Jane Doe</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card testimonial-card">
+                            <div class="card-body">
+                                <div class="d-flex flex-row">
+                                    <p class="card-text">"I am proud to be a part of the JNV Jamnagar Alumni
+                                        Association.
+                                        This
+                                        organization has not only provided me with an opportunity to reconnect with my
+                                        old
+                                        classmates, but also with a platform to give back to the community and make a
+                                        difference
+                                        in the lives of current students. The events and initiatives organized by the
+                                        Association have not only helped me to stay connected with my alma mater but
+                                        also
+                                        given
+                                        me a sense of belonging to a larger community. I highly recommend joining this
+                                        Association to all JNV alumni, as it's a wonderful way to stay connected and
+                                        make a
+                                        positive impact."
+                                    </p>
+                                    <img src="images/person-3.png" alt="" class="h-25 w-25">
+                                </div>
+
+                                <h4 class="card-title">Jim Smith</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5" id="photos">
+        <div class="container p-5">
+            <h1 class="text-center text-light">Photo Gallery</h1>
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="photo1.jpg" data-toggle="lightbox" data-title="Photo 1">
+                        <img src="images/slider-1.png" class="img-fluid" alt="Photo 1">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="photo2.jpg" data-toggle="lightbox" data-title="Photo 2">
+                        <img src="images/slider-2.png" class="img-fluid" alt="Photo 2">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="photo3.jpg" data-toggle="lightbox" data-title="Photo 3">
+                        <img src="images/slider-3.png" class="img-fluid" alt="Photo 3">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="photo4.jpg" data-toggle="lightbox" data-title="Photo 4">
+                        <img src="images/slider-4.png" class="img-fluid" alt="Photo 4">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="photo5.jpg" data-toggle="lightbox" data-title="Photo 5">
+                        <img src="images/slider-5.png" class="img-fluid" alt="Photo 5">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="photo6.jpg" data-toggle="lightbox" data-title="Photo 6">
+                        <img src="images/slider-1.png" class="img-fluid" alt="Photo 6">
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container" id="Testimonials">
-        <div class="text-center">
-            <h1 class="heading">
-                Testimonials
-            </h1>
-        </div>
-        <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
-
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#testimonial-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#testimonial-carousel" data-slide-to="1"></li>
-                <li data-target="#testimonial-carousel" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Slides -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card testimonial-card">
-                        <div class="card-body">
-                            <div class="d-flex flex-row">
-                                <p class="card-text">"I am proud to be a part of the JNV Jamnagar Alumni Association.
-                                    The
-                                    community and network that this association provides is invaluable, and I have made
-                                    lifelong friends through my involvement. The events and initiatives organized by the
-                                    association keep us connected to our alma mater and allow us to give back to current
-                                    students. I am grateful for the opportunities and memories that this association has
-                                    provided me and I highly recommend it to all JNV Jamnagar alumni."
-                                </p>
-                                <img src="images/person-1.png" alt="person-1" class="h-25 w-25">
-                            </div>
-
-                            <h4 class="card-title">John Doe</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card testimonial-card">
-                        <div class="card-body">
-                            <div class="d-flex flex-row">
-                                <p class="card-text">"Being a part of the JNV Jamnagar Alumni Association has been a
-                                    truly
-                                    enriching experience for me. The community of alumni is supportive and welcoming,
-                                    and
-                                    the events and initiatives organized by the association have allowed me to stay
-                                    connected with my alma mater and give back to the school in meaningful ways. I am
-                                    proud
-                                    to be a part of this vibrant and dynamic network and look forward to continuing my
-                                    involvement in the future."
-                                </p>
-                                <img src="images/person-2.png" alt="" class="h-25 w-25">
-                            </div>
-
-                            <h4 class="card-title">Jane Doe</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card testimonial-card">
-                        <div class="card-body">
-                            <div class="d-flex flex-row">
-                                <p class="card-text">"I am proud to be a part of the JNV Jamnagar Alumni Association.
-                                    This
-                                    organization has not only provided me with an opportunity to reconnect with my old
-                                    classmates, but also with a platform to give back to the community and make a
-                                    difference
-                                    in the lives of current students. The events and initiatives organized by the
-                                    Association have not only helped me to stay connected with my alma mater but also
-                                    given
-                                    me a sense of belonging to a larger community. I highly recommend joining this
-                                    Association to all JNV alumni, as it's a wonderful way to stay connected and make a
-                                    positive impact."
-                                </p>
-                                <img src="images/person-3.png" alt="" class="h-25 w-25">
-                            </div>
-
-                            <h4 class="card-title">Jim Smith</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </a>
-
-        </div>
-
-    </section>
 
     <section class="aboutUs" id="about_us">
-        <div class="container my-5">
-            <h2 class="text-center">About Us</h2>
+        <div class="container p-5">
+            <h2 class="text-center mt-5">About Us</h2>
             <div class="row">
                 <div class="col-md-4">
                     <p>We are a team of dedicated professionals who are passionate about our work. Our mission is to
@@ -296,41 +395,52 @@
                         to have a loyal customer base. Our team is constantly striving to improve and innovate, and we
                         are always looking for new ways to better serve our clients.</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="images/logo-small.png" alt="About Us" class="img-fluid">
+                <div class="col-md-4 about_us_border d-flex">
+                    <img src="images/logo-small.png" class="my-5 mx-auto" alt="">
                 </div>
                 <div class="col-md-4">
-
+                    <div class="row">
+                        <div class="container mb-5">
+                            <h5 class="text-center">Contact Us</h5>
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control" id="message" rows="3"
+                                        placeholder="Enter your message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </section>
-
+    <!-- 
     <button id="back-to-top-btn" class="btn btn-primary btn-lg back-to-top"
         style="display: block;position: fixed; margin-bottom: 0px; margin-left: 0px;">
         <i class="fas fa-arrow-up"></i>
-    </button>
-
-
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    </button> -->
+    <script src="css/jquery-3.2.1.slim.min.js"></script>
+    <script src="css/popper.min.js"></script>
+    <script src="css/bootstrap.min.js"></script>
+    <script src="assignment2.js"></script>
 </body>
-<script src="assignment2.js"></script>
 
 </html>
+
+
+
+
+
+
+
