@@ -48,3 +48,16 @@ html{
 #navbar {
     z-index: 100;
 }
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.table_image {
+    height: 100px;
+    width: 100px;
+}
