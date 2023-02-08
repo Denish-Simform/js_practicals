@@ -32,8 +32,9 @@
 #back-to-top-btn {
     display: block;
     position: fixed;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    bottom: 0;
+    /* margin-bottom: 0px;
+    margin-left: 0px; */
 }
 
 .about_us_border {

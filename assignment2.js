@@ -42,21 +42,21 @@ function showSlides(n) {
 }
 
 function scrollHide(link) {
-    const collection = document.getElementsByTagName('section');
-    let b2t = document.getElementById('back-to-top-btn');
+    const collection = document.getElementsByClassName('section_toggle');
+    // let b2t = document.getElementById('back-to-top-btn');
     for (const col of collection) {
         if (link == 'home') {
             col.classList.remove("hide");
-            b2t.classList.remove('hide');
+            // b2t.classList.remove('hide');
 
         } else {
             if (!col.classList.contains(link)) {
                 col.classList.add("hide");
-                b2t.classList.add('hide');
+                // b2t.classList.add('hide');
             }
             if (col.classList.contains(link)) {
                 col.classList.remove("hide");
-                b2t.classList.add('hide');
+                // b2t.classList.add('hide');
             }
         }
 
