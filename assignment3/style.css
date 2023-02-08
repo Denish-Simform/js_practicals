@@ -4,7 +4,7 @@
     font-family: "Titillium Web", sans-serif;
 }
 
-html{
+html {
     scroll-behavior: none;
 }
 
@@ -60,4 +60,10 @@ html{
 .table_image {
     height: 100px;
     width: 100px;
+}
+
+#display_image {
+    height: 100px;
+    width: 100px;
+    margin-left: -10rem;
 }

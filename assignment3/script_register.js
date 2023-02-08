@@ -105,6 +105,21 @@ form.addEventListener("submit", function (event) {
 
 });
 
+const reader = new FileReader();
+function readURL(input) {
+    document.getElementById("display_image").style.display = "block";
+
+    if (input.files && input.files[0]) {
+
+
+        reader.onload = function (e) {
+            document.getElementById('display_image').src = e.target.result;
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 function showTable() {
     // location.reload();
     let tbody = document.getElementById("tbody");
@@ -125,7 +140,7 @@ function showTable() {
         let td4 = document.createElement('td');
         td4.innerHTML = data_arr.batch;
         let td5 = document.createElement('td');
-        td5.innerHTML = "<img src="+data_arr.image+">";
+        td5.innerHTML = "<img src=" + data_arr.image + " class='table_image'>";
         let td6 = document.createElement('td');
         td6.innerHTML = data_arr.occupation;
         let td7 = document.createElement('td');
@@ -150,7 +165,6 @@ function storeData() {
     let fname = document.getElementById("fname").value;
     let sname = document.getElementById("sname").value;
     let batch = document.getElementById("batch").value;
-    let image = document.getElementById("image").value;
     let occupation = document.getElementsByName("occupation");
     let job;
     for (const occ of occupation) {
@@ -160,6 +174,7 @@ function storeData() {
         }
     }
     let city = document.getElementById("city").value;
+    let image = reader.result;
     const data = new Object();
     data.id = id;
     data.fname = fname;
@@ -187,6 +202,7 @@ for (let i = 0; i < len_edit; i++) {
         let sname = document.getElementById("sname");
         let batch = document.getElementById("batch");
         let image = document.getElementById("image");
+        let display_image = document.getElementById("display_image");
         let occupation = document.getElementsByName("occupation");
         let city = document.getElementById("city");
         let data = localStorage.getItem(button_id);
@@ -196,9 +212,10 @@ for (let i = 0; i < len_edit; i++) {
         fname.value = data_arr.fname;
         sname.value = data_arr.sname;
         batch.value = data_arr.batch;
-        // image.value = data_arr.image;
-        for(const occ of occupation) {
-            if(occ.value == data_arr.occupation) {
+        display_image.style.display = 'block';
+        display_image.src = data_arr.image;
+        for (const occ of occupation) {
+            if (occ.value == data_arr.occupation) {
                 occ.checked = true;
             }
         }
@@ -216,5 +233,5 @@ for (let i = 0; i < len_del; i++) {
         localStorage.removeItem(button_id);
         location.reload();
     })
-    
+
 }
