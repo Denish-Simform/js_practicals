@@ -97,6 +97,8 @@ function validateForm() {
     }
 }
 
+let edit_clicked = 0;
+
 showTable();
 
 let form = document.getElementById("form");
@@ -174,7 +176,15 @@ function storeData() {
         }
     }
     let city = document.getElementById("city").value;
-    let image = reader.result;
+    let image;
+    if (edit_clicked > 0) {
+        image = document.getElementById('display_image').src;
+        localStorage.removeItem(edit_clicked);
+        console.log(image);
+    } else {
+        image = reader.result;
+        localStorage.removeItem(edit_clicked);
+    }
     const data = new Object();
     data.id = id;
     data.fname = fname;
@@ -191,12 +201,12 @@ function storeData() {
     let lenStr = len.toString();
     localStorage.setItem(lenStr, json_data);
 }
-
 let edit_btn = document.getElementsByClassName('edit');
 let len_edit = edit_btn.length;
 for (let i = 0; i < len_edit; i++) {
     edit_btn[i].addEventListener('click', function () {
         let button_id = this.id.slice(4);
+        edit_clicked = button_id;
         let id = document.getElementById("id");
         let fname = document.getElementById("fname");
         let sname = document.getElementById("sname");
@@ -220,7 +230,6 @@ for (let i = 0; i < len_edit; i++) {
             }
         }
         city.value = data_arr.city;
-
     })
 }
 
