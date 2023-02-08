@@ -44,3 +44,12 @@
 #navbar {
     z-index: 100;
 }
+
+.hide {
+    display: none !important;
+}
+
+.btn {
+    box-shadow: none !important;
+}
+
