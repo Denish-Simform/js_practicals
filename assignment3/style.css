@@ -4,7 +4,7 @@
     font-family: "Titillium Web", sans-serif;
 }
 
-html{
+html {
     scroll-behavior: none;
 }
 
@@ -36,7 +36,8 @@ html{
 #back-to-top-btn {
     display: block;
     position: fixed;
-    bottom: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
 
 .about_us_border {
@@ -48,11 +49,21 @@ html{
     z-index: 100;
 }
 
-.hide {
-    display: none !important;
+.form-group {
+    margin-bottom: 10px;
 }
 
-.btn {
-    box-shadow: none !important;
+.error {
+    color: red;
 }
 
+.table_image {
+    height: 100px;
+    width: 100px;
+}
+
+#display_image {
+    height: 100px;
+    width: 100px;
+    margin-left: -10rem;
+}
