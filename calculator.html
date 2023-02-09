@@ -20,14 +20,14 @@
             <h1>CALCULATOR</h1>
         </div>
         <div class="col-4 calculator p-3">
-            <div class=" display">
+            <div class="display" id="display">
                 <input type="text" class="border-0 col me-1" placeholder="0" name="number_display" id="number_display"
                     oninput="getinput()">
                 <input type="text" class="border-0 col me-1" placeholder="0" name="operation_display" id="operation_display">
             </div>
             <div class="keys-div">
                 <div class="row d-flex mb-1">
-                    <div class="col-2 p-2 text-center btn key me-1">DEG</div>
+                    <div class="col-2 p-2 text-center btn key me-1" id="unit" onclick="trigno_unit()">DEG</div>
                     <div class="col-2 p-2 text-center btn key me-1">F-E</div>
                 </div>
                 <div class="row d-flex mb-1">
@@ -40,14 +40,13 @@
                 <div class="row d-flex mb-1">
                     <div class="col-3 p-2 text-center btn key me-1 " id="trignometry_function_button" onclick="trignometry()">Trignometry</div>
                     <div class="col-3 p-2 text-center btn key me-1 " id="normal_function_button" onclick="normal()">Normal</div>
-                    <div class="col-3 p-2 text-center btn key me-1">Function<i class="fa-solid fa-angle-down ms-1"></i>
-                    </div>
+                    <div class="col-3 p-2 text-center btn key me-1" onclick="converter()" id="converter">Converter</div>
                 </div>
                 <div class="row d-flex mb-1">
                     <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function">2<sup>nd</sup></div>
                     <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function" onclick="displayNum(3.14)">&pi;</div>
                     <div class="col p-2 text-center btn key key-operation me-1 replace_normal_function" onclick="displayNum(2.7182)">e</div>
-                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="sin()">Sin</div>
+                    <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="trigno_functions('Sin')">Sin</div>
                     <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="cos()">Cos</div>
                     <div class="col p-2 text-center btn key key-operation me-1 replace_trignometric_function" onclick="tan()">Tan</div>
                     <div class="col p-2 text-center btn key key-operation me-1" onclick="clearAll()">C</div>
