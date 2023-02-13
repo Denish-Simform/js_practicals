@@ -1,102 +1,3 @@
-function validateForm() {
-
-    var notallowedChar = /[0-9]/;
-
-    // id
-    let id = document.getElementById("id");
-    if (id.value === "") {
-        let err = document.getElementById("id_error");
-        err.innerHTML = "Enter valid ID!!"
-        err.style.display = "inline-block";
-    }
-
-    // fname
-    let fname = document.getElementById("fname");
-    if (notallowedChar.exec(fname.value)) {
-        let err = document.getElementById("fame_error");
-        err.innerHTML = "Enter valid First Name!!"
-        err.style.display = "inline-block";
-        city.value = "";
-    } else if (fname.value === "") {
-        let err = document.getElementById("fname_error");
-        err.innerHTML = "Enter First Name!!"
-        err.style.display = "inline-block";
-        fname.value = "";
-    }
-
-    // sname
-    let sname = document.getElementById("sname");
-    if (notallowedChar.exec(sname.value)) {
-        let err = document.getElementById("sname_error");
-        err.innerHTML = "Enter valid Second Name!!"
-        err.style.display = "inline-block";
-        city.value = "";
-    } else if (sname.value === "") {
-        let err = document.getElementById("sname_error");
-        err.innerHTML = "Enter Second Name!!"
-        err.style.display = "inline-block";
-        sname.value = "";
-    }
-
-    // batch
-    let batch = document.getElementById("batch");
-    if (batch.value === "none") {
-        let err = document.getElementById("batch_error");
-        err.innerHTML = "Select batch!!"
-        err.style.display = "inline-block";
-        batch.value = "";
-    }
-
-    // img
-    let img = document.getElementById("image");
-    // Allowing file type
-    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-    if (!allowedExtensions.exec(img.value)) {
-        let err = document.getElementById("img_error");
-        err.innerHTML = "Select image!!"
-        err.style.display = "inline-block";
-        img.value = '';
-    } else if (img.value === "") {
-        let err = document.getElementById("img_error");
-        err.innerHTML = "Select image!!"
-        err.style.display = "inline-block";
-        img.value = '';
-    } else {
-        if (img.files && img.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                document.getElementById(
-                    'display_image').src = e.target.result;
-            };
-
-            reader.readAsDataURL(img.files[0]);
-        }
-    }
-
-    // occupation
-    let occupation = document.getElementById("occupation");
-    if (occupation.value == "--Select Occupation--") {
-        let err = document.getElementById("occupation_error");
-        err.innerHTML = "Please select!!"
-        err.style.display = "inline-block";
-        occupation.value = "";
-    }
-
-    // city
-    let city = document.getElementById("city");
-    if (notallowedChar.exec(city.value)) {
-        let err = document.getElementById("city_error");
-        err.innerHTML = "Enter valid city!!"
-        err.style.display = "inline-block";
-        city.value = "";
-    } else if (city.value == "") {
-        let err = document.getElementById("city_error");
-        err.innerHTML = "Enter valid city!!"
-        err.style.display = "inline-block";
-        city.value = "";
-    }
-}
-
 let edit_clicked = 0;
 
 showTable();
@@ -122,8 +23,22 @@ function readURL(input) {
     }
 }
 
+const edit_reader = new FileReader();
+function readURL_edit(input) {
+    document.getElementById("edit_display_image").style.display = "block";
+
+    if (input.files && input.files[0]) {
+
+
+        edit_reader.onload = function (e) {
+            document.getElementById('edit_display_image').src = e.target.result;
+        }
+
+        edit_reader.readAsDataURL(input.files[0]);
+    }
+}
+
 function showTable() {
-    // location.reload();
     let tbody = document.getElementById("tbody");
     let len = localStorage.length;
     tbody.innerHTML = "";
@@ -146,7 +61,7 @@ function showTable() {
         let td6 = document.createElement('td');
         td6.innerHTML = data_arr.occupation;
         let td7 = document.createElement('td');
-        td7.innerHTML = "<button type='button' class='btn btn-primary edit' id='edit" + i + "'>Edit</button>";
+        td7.innerHTML = "<button type='button' class='btn btn-primary edit' id='edit" + i + "'data-toggle='modal' data-target='#exampleModalCenter'>Edit</button>";
         let td8 = document.createElement('td');
         td8.innerHTML = "<button type='button' class='btn btn-danger delete' id='delete" + i + "'>Delete</button>";
         newtr.appendChild(td0);
@@ -176,15 +91,7 @@ function storeData() {
         }
     }
     let city = document.getElementById("city").value;
-    let image;
-    if (edit_clicked > 0) {
-        image = document.getElementById('display_image').src;
-        localStorage.removeItem(edit_clicked);
-        console.log(image);
-    } else {
-        image = reader.result;
-        localStorage.removeItem(edit_clicked);
-    }
+    let image = reader.result;
     const data = new Object();
     data.id = id;
     data.fname = fname;
@@ -193,28 +100,61 @@ function storeData() {
     data.image = image;
     data.occupation = job;
     data.city = city;
-
-    console.log(data);
-
     var json_data = JSON.stringify(data);
     let len = localStorage.length + 1;
     let lenStr = len.toString();
     localStorage.setItem(lenStr, json_data);
 }
+
+function updateItem() {
+    let id = edit_clicked;
+    const whole_data = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        whole_data.push(JSON.parse(localStorage.getItem(i+1)));
+    }
+    let fname = document.getElementById("edit_fname").value;
+    let sname = document.getElementById("edit_sname").value;
+    let batch = document.getElementById("edit_batch").value;
+    let occupation = document.getElementsByName("edit_occupation");
+    let job;
+    for (const occ of occupation) {
+        if (occ.checked) {
+            job = occ.value;
+            break;
+        }
+    }
+    let city = document.getElementById("edit_city").value;
+    let image = document.getElementById("edit_image").value; 
+    image = document.getElementById('edit_display_image').src;
+    whole_data[id-1]['id'] = id;
+    whole_data[id-1]['fname'] = fname;
+    whole_data[id-1]['sname'] = sname;
+    whole_data[id-1]['batch'] = batch;
+    whole_data[id-1]['image'] = image;
+    whole_data[id-1]['job'] = job;
+    whole_data[id-1]['city'] = city;
+
+    for (let i = 0; i < localStorage.length; i++) {
+        let index = i+1;
+        localStorage.setItem(index,JSON.stringify(whole_data[i]));
+    }
+    showTable();
+}
+
 let edit_btn = document.getElementsByClassName('edit');
 let len_edit = edit_btn.length;
 for (let i = 0; i < len_edit; i++) {
     edit_btn[i].addEventListener('click', function () {
         let button_id = this.id.slice(4);
         edit_clicked = button_id;
-        let id = document.getElementById("id");
-        let fname = document.getElementById("fname");
-        let sname = document.getElementById("sname");
-        let batch = document.getElementById("batch");
-        let image = document.getElementById("image");
-        let display_image = document.getElementById("display_image");
-        let occupation = document.getElementsByName("occupation");
-        let city = document.getElementById("city");
+        let id = document.getElementById("edit_id");
+        let fname = document.getElementById("edit_fname");
+        let sname = document.getElementById("edit_sname");
+        let batch = document.getElementById("edit_batch");
+        let image = document.getElementById("edit_image");
+        let display_image = document.getElementById("edit_display_image");
+        let occupation = document.getElementsByName("edit_occupation");
+        let city = document.getElementById("edit_city");
         let data = localStorage.getItem(button_id);
         let data_arr = JSON.parse(data);
 
