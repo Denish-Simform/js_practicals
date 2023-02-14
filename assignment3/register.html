@@ -42,13 +42,13 @@
     <section class="my-5">
         <div class="d-flex flex-column">
             <div class="form_div container d-flex justify-content-center">
-                <form action="" class="text-center p-4 border rounded text-light col-8" id="form">
+                <form action="" class="text-center p-4 border rounded text-light col-8" id="form" method="">
                     <h3 class="text-light">Registration Form</h3>
                     <hr>
                     <!-- id -->
                     <div class="form-group d-flex">
                         <label for="id" class="col-2 rounded text-start">ID </label>
-                        <input type="text" name="id" class="col-10 rounded" id="id" value="" required placeholder="Id">
+                        <input type="number" name="id" class="col-10 rounded" id="id" value="" required placeholder="Id">
                     </div>
                     <label for="id_error" id="id_error" class="error"></label>
                     <!-- fname -->
@@ -103,7 +103,7 @@
                     <label for="city_error" id="city_error" class="error"></label>
                     <!-- submit -->
                     <div class="form-group d-flex justify-content-center">
-                        <button type="submit">Submit</button>
+                        <button type="submit" id="submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -118,6 +118,7 @@
                             <th scope="col">Batch</th>
                             <th scope="col">Image</th>
                             <th scope="col">Occupation</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
 
@@ -192,7 +193,7 @@
                                     <div class="form-group d-flex">
                                         <label for="id" class="col-2 rounded text-start">ID </label>
                                         <input type="text" name="id" class="col-10 rounded" id="edit_id" value="" required
-                                            placeholder="Id">
+                                            placeholder="Id" disabled>
                                     </div>
                                     <label for="id_error" id="edit_id_error" class="error"></label>
                                     <!-- fname -->
