@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JNV Jamnagar Alumni Association</title>
-    <link rel="stylesheet" href="/js_practicals/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/js_practicals/css/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-dark" data-spy="scroll" data-target="#navbar" data-offset-top="200">
     <nav class="navbar sticky-top navbar-expand-lg bg-dark" id="navbar">
         <div class="container">
-            <img src="/js_practicals/images/logo-small.png" class="me-3" alt="">
+            <img src="../images/logo-small.png" class="me-3" alt="">
             <a class="navbar-brand text-light" href="#">JNV Jamnagar Alumni Association</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +42,14 @@
     <section class="my-5">
         <div class="d-flex flex-column">
             <div class="form_div container d-flex justify-content-center">
-                <form action="" class="text-center p-4 border rounded text-light col-8" id="form" method="">
+                <form class="text-center p-4 border rounded text-light col-8" id="form" method="post">
                     <h3 class="text-light">Registration Form</h3>
                     <hr>
                     <!-- id -->
                     <div class="form-group d-flex">
                         <label for="id" class="col-2 rounded text-start">ID </label>
-                        <input type="number" name="id" class="col-10 rounded" id="id" value="" required placeholder="Id">
+                        <input type="number" name="id" class="col-10 rounded" id="id" value="" required
+                            placeholder="Id">
                     </div>
                     <label for="id_error" id="id_error" class="error"></label>
                     <!-- fname -->
@@ -143,7 +144,7 @@
                         are always looking for new ways to better serve our clients.</p>
                 </div>
                 <div class="col-md-4 about_us_border d-flex">
-                    <img src="/js_practicals/images/logo-small.png" class="my-5 mx-auto" alt="">
+                    <img src="../images/logo-small.png" class="my-5 mx-auto" alt="">
                 </div>
                 <div class="col-md-4">
                     <div class="row">
@@ -192,8 +193,8 @@
                                     <!-- id -->
                                     <div class="form-group d-flex">
                                         <label for="id" class="col-2 rounded text-start">ID </label>
-                                        <input type="text" name="id" class="col-10 rounded" id="edit_id" value="" required
-                                            placeholder="Id" disabled>
+                                        <input type="text" name="id" class="col-10 rounded" id="edit_id" value=""
+                                            required placeholder="Id" disabled>
                                     </div>
                                     <label for="id_error" id="edit_id_error" class="error"></label>
                                     <!-- fname -->
@@ -233,11 +234,13 @@
                                     <!-- occupation -->
                                     <div class="form-group d-flex">
                                         <label for="occupation" class="col-2 rounded text-start">Occupation </label>
-                                        <input type="radio" name="edit_occupation" id="student" value="Student" required>
+                                        <input type="radio" name="edit_occupation" id="student" value="Student"
+                                            required>
                                         <label for="student" class="col-3 text-start ms-2">Student</label>
                                         <input type="radio" name="edit_occupation" id="job" value="Job" required>
                                         <label for="job" class="col-3 text-start ms-2">Job</label>
-                                        <input type="radio" name="edit_occupation" id="business" value="Business" required>
+                                        <input type="radio" name="edit_occupation" id="business" value="Business"
+                                            required>
                                         <label for="business" class="col-3 text-start ms-2">Business</label>
                                     </div>
                                     <label for="occupation_error" id="edit_occupation_error" class="error"></label>
@@ -254,15 +257,16 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" onclick="updateItem()" data-dismiss="modal">Update</button>
+                        <button type="submit" class="btn btn-primary" onclick="updateItem()"
+                            data-dismiss="modal">Update</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="/js_practicals/css/jquery-3.2.1.slim.min.js"></script>
-    <script src="/js_practicals/css/popper.min.js"></script>
-    <script src="/js_practicals/css/bootstrap.min.js"></script>
+    <script src="../css/jquery-3.2.1.slim.min.js"></script>
+    <script src="../css/popper.min.js"></script>
+    <script src="../css/bootstrap.min.js"></script>
     <script src="script_register.js"></script>
 </body>
 
