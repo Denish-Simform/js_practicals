@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JNV Jamnagar Alumni Association</title>
-    <link rel="stylesheet" href="/js_practicals/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/js_practicals/css/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-dark" data-spy="scroll" data-target="#navbar" data-offset-top="200">
     <nav class="navbar sticky-top navbar-expand-lg bg-dark" id="navbar">
         <div class="container">
-            <img src="/js_practicals/images/logo-small.png" class="me-3" alt="">
+            <img src="../images/logo-small.png" class="me-3" alt="">
             <a class="navbar-brand text-light" href="#">JNV Jamnagar Alumni Association</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +42,14 @@
     <section class="my-5">
         <div class="d-flex flex-column">
             <div class="form_div container d-flex justify-content-center">
-                <form action="" class="text-center p-4 border rounded text-light col-8" id="form">
+                <form class="text-center p-4 border rounded text-light col-8" id="form" method="post">
                     <h3 class="text-light">Registration Form</h3>
                     <hr>
                     <!-- id -->
                     <div class="form-group d-flex">
                         <label for="id" class="col-2 rounded text-start">ID </label>
-                        <input type="text" name="id" class="col-10 rounded" id="id" value="" required placeholder="Id">
+                        <input type="number" name="id" class="col-10 rounded" id="id" value="" required
+                            placeholder="Id">
                     </div>
                     <label for="id_error" id="id_error" class="error"></label>
                     <!-- fname -->
@@ -79,8 +80,7 @@
                     <!-- image -->
                     <div class="form-group d-flex">
                         <label for="image" class="col-2 rounded text-start">Photo </label>
-                        <input type="file" name="image" class="col-10 rounded" id="image" 
-                            onchange="readURL(this)">
+                        <input type="file" name="image" class="col-10 rounded" id="image" onchange="readURL(this)">
                         <img src="" alt="imageofuser" id="display_image" style="display: none;">
                     </div>
                     <label for="img_error" id="img_error" class="error"></label>
@@ -104,7 +104,7 @@
                     <label for="city_error" id="city_error" class="error"></label>
                     <!-- submit -->
                     <div class="form-group d-flex justify-content-center">
-                        <button type="submit">Submit</button>
+                        <button type="submit" id="submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -119,6 +119,7 @@
                             <th scope="col">Batch</th>
                             <th scope="col">Image</th>
                             <th scope="col">Occupation</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
 
@@ -143,7 +144,7 @@
                         are always looking for new ways to better serve our clients.</p>
                 </div>
                 <div class="col-md-4 about_us_border d-flex">
-                    <img src="/js_practicals/images/logo-small.png" class="my-5 mx-auto" alt="">
+                    <img src="../images/logo-small.png" class="my-5 mx-auto" alt="">
                 </div>
                 <div class="col-md-4">
                     <div class="row">
@@ -172,14 +173,100 @@
         </div>
 
     </section>
-    <!-- 
-    <button id="back-to-top-btn" class="btn btn-primary btn-lg back-to-top"
-        style="display: block;position: fixed; margin-bottom: 0px; margin-left: 0px;">
-        <i class="fas fa-arrow-up"></i>
-    </button> -->
-    <script src="/js_practicals/css/jquery-3.2.1.slim.min.js"></script>
-    <script src="/js_practicals/css/popper.min.js"></script>
-    <script src="/js_practicals/css/bootstrap.min.js"></script>
+
+    <section>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-10" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered bg-dark text-light" role="document">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Edit Form</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body w-100">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <form action="" class="text-center p-4 border rounded text-light col w-100" id="form">
+                                    <!-- id -->
+                                    <div class="form-group d-flex">
+                                        <label for="id" class="col-2 rounded text-start">ID </label>
+                                        <input type="text" name="id" class="col-10 rounded" id="edit_id" value=""
+                                            required placeholder="Id" disabled>
+                                    </div>
+                                    <label for="id_error" id="edit_id_error" class="error"></label>
+                                    <!-- fname -->
+                                    <div class="form-group d-flex">
+                                        <label for="fname" class="col-2 rounded text-start">First Name </label>
+                                        <input type="text" name="fname" class="col-10 rounded" id="edit_fname"
+                                            placeholder="Denish" required>
+                                    </div>
+                                    <label for="fname_error" id="edit_fname_error" class="error"></label>
+                                    <!-- sname -->
+                                    <div class="form-group d-flex">
+                                        <label for="sname" class="col-2 rounded text-start">Second Name </label>
+                                        <input type="text" name="sname" class="col-10 rounded" id="edit_sname"
+                                            placeholder="Bhimani" required>
+                                    </div>
+                                    <label for="sname_error" id="edit_sname_error" class="error"></label>
+                                    <!-- batch -->
+                                    <div class="form-group d-flex">
+                                        <label for="batch" class="col-2 rounded text-start">Batch </label>
+                                        <select name="batch" id="edit_batch" required>
+                                            <option value="none" selected>--Select Batch--</option>
+                                            <option value="2000-2005">2000-2005</option>
+                                            <option value="2006-2010">2006-2010</option>
+                                            <option value="2011-2015">2011-2015</option>
+                                            <option value="2016-2020">2016-2020</option>
+                                        </select>
+                                    </div>
+                                    <label for="batch_error" id="edit_batch_error" class="error"></label>
+                                    <!-- image -->
+                                    <div class="form-group d-flex">
+                                        <label for="image" class="col-2 rounded text-start">Photo </label>
+                                        <input type="file" name="image" class="col-10 rounded" id="edit_image"
+                                            onchange="readURL_edit(this)">
+                                        <img src="" alt="imageofuser" id="edit_display_image" style="display: none;">
+                                    </div>
+                                    <label for="img_error" id="edit_img_error" class="error"></label>
+                                    <!-- occupation -->
+                                    <div class="form-group d-flex">
+                                        <label for="occupation" class="col-2 rounded text-start">Occupation </label>
+                                        <input type="radio" name="edit_occupation" id="student" value="Student"
+                                            required>
+                                        <label for="student" class="col-3 text-start ms-2">Student</label>
+                                        <input type="radio" name="edit_occupation" id="job" value="Job" required>
+                                        <label for="job" class="col-3 text-start ms-2">Job</label>
+                                        <input type="radio" name="edit_occupation" id="business" value="Business"
+                                            required>
+                                        <label for="business" class="col-3 text-start ms-2">Business</label>
+                                    </div>
+                                    <label for="occupation_error" id="edit_occupation_error" class="error"></label>
+                                    <!-- city -->
+                                    <div class="form-group d-flex">
+                                        <label for="city" class="col-2 rounded text-start">City </label>
+                                        <input type="text" name="city" class="col-10 rounded" id="edit_city"
+                                            placeholder="Ahmedabad" required>
+                                    </div>
+                                    <label for="city_error" id="edit_city_error" class="error"></label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" onclick="updateItem()"
+                            data-dismiss="modal">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../css/jquery-3.2.1.slim.min.js"></script>
+    <script src="../css/popper.min.js"></script>
+    <script src="../css/bootstrap.min.js"></script>
     <script src="script_register.js"></script>
 </body>
 

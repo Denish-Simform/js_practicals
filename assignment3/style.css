@@ -62,8 +62,13 @@ html {
     width: 100px;
 }
 
-#display_image {
+#display_image,
+#edit_display_image {
     height: 100px;
     width: 100px;
     margin-left: -10rem;
+}
+
+.modal-dialog {
+    max-width: 700px !important;
 }
